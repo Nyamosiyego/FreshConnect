@@ -68,11 +68,11 @@ export default function Featured({ product }) {
         <ColumnsWrapper>
           <Column>
             <div>
-              <Title>White Rice</Title>
-              <Desc>lorem ipsum</Desc>
+              <Title>{product.title}</Title>
+              <Desc>{product.description}</Desc>
               <ButtonsWrapper>
                 <ButtonLink
-                  href={"/product/"}
+                  href={"/product/" + product._id}
                   outline={1}
                   white={1}
                 >
@@ -89,7 +89,6 @@ export default function Featured({ product }) {
             <img
               src="https://next-ecommerce-learn.s3.amazonaws.com/1688582855029.jpg"
               alt=""
-              className="img-fluid rounded-md"
             />
           </Column>
         </ColumnsWrapper>

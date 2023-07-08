@@ -7,6 +7,7 @@ import NewProducts from "@/components/NewProducts";
 export default function HomePage({ featuredProduct, newProducts }) {
   return (
     <div>
+      <title>FreshConnect</title>
       <Header />
       <Featured product={featuredProduct} />
       <NewProducts products={newProducts} />
@@ -15,7 +16,7 @@ export default function HomePage({ featuredProduct, newProducts }) {
 }
 
 export async function getServerSideProps() {
-  const featuredProductId = "640de2b12aa291ebdf213d48";
+  const featuredProductId = "64a55f0c1f2c4108451d9708";
   await mongooseConnect();
   const featuredProduct = await Product.findById(featuredProductId);
   const newProducts = await Product.find({}, null, {
