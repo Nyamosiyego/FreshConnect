@@ -72,7 +72,7 @@ export default function ProductForm({
   return (
     <form onSubmit={saveProduct}>
       <Header />
-      <div className="w-full mt-6 mb-3 px-12 pb-5">
+      <div className="w-full mt-6 px-12 pb-5">
         <h1 className="text-2xl font-bold mb-5">Become a vendor</h1>
         <label>Full names</label>
         <input
