@@ -6,7 +6,7 @@ import NewProducts from "@/components/NewProducts";
 
 export default function HomePage({ featuredProduct, newProducts }) {
   return (
-    <div>
+    <div className="mb-8">
       <title>FreshConnect</title>
       <Header />
       <Featured product={featuredProduct} />
