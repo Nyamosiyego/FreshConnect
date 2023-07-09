@@ -77,7 +77,7 @@ export default function ProductForm({
         <label>Full names</label>
         <input
           type="text"
-          placeholder="product name"
+          placeholder="full names"
           value={title}
           onChange={(ev) => setTitle(ev.target.value)}
         />
