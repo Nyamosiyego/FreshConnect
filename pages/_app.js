@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { CartContextProvider } from "@/components/CartContext";
+import { ChakraProvider } from "@chakra-ui/react";
+import "@/styles/globals.css";
 
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -16,7 +18,9 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyles />
       <CartContextProvider>
-        <Component {...pageProps} />
+        <ChakraProvider>
+          <Component {...pageProps} />
+        </ChakraProvider>
       </CartContextProvider>
     </>
   );
