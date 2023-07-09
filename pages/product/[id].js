@@ -44,8 +44,9 @@ export default function ProductPage({ product }) {
             <p>{product.description}</p>
             <PriceRow>
               <div>
-                <Price>${product.price}</Price>
+                <Price>KES {product.price}</Price>
               </div>
+              {/* <div>Sold by {product.user}</div> */}
               <div>
                 <Button primary onClick={() => addProduct(product._id)}>
                   <CartIcon />
@@ -63,7 +64,7 @@ export default function ProductPage({ product }) {
 export async function getServerSideProps(context) {
   await mongooseConnect();
   const { id } = context.query;
-  const product = await Product.findById(id);
+  const product = await Product.findById(id)
   return {
     props: {
       product: JSON.parse(JSON.stringify(product)),

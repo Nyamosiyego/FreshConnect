@@ -70,7 +70,7 @@ export default function ProductBox({ _id, title, description, price, images }) {
       <ProductInfoBox>
         <Title href={url}>{title}</Title>
         <PriceRow>
-          <Price>${price}</Price>
+          <Price>KES {price}</Price>
           <Button block onClick={() => addProduct(_id)} primary outline>
             Add to cart
           </Button>
