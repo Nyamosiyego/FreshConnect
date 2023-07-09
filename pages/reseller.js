@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 import Spinner from "@/components/spinner";
 import { ReactSortable } from "react-sortablejs";
 import Header from "@/components/Header";
@@ -23,6 +24,16 @@ export default function ProductForm({
   const [kra, setKra] = useState("");
 
   const router = useRouter();
+  const notify = () =>
+    toast("We'll get in touch.", {
+      icon: "👏",
+      duration: 4000,
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
   async function saveProduct(ev) {
     ev.preventDefault();
     const data = {
@@ -43,9 +54,20 @@ export default function ProductForm({
     console.log(data);
     setGoToProducts(true);
   }
+useEffect(() => {
   if (goToProducts) {
-    router.push("/");
+    const delay = 2000; // Delay in milliseconds (2 seconds in this example)
+
+    const timeoutId = setTimeout(() => {
+      router.push("/");
+    }, delay);
+
+    return () => clearTimeout(timeoutId); // Clear the timeout if the component unmounts before the delay completes
   }
+}, [goToProducts, router]);
+
+
+ 
   async function uploadImages(ev) {
     const files = ev.target?.files;
     if (files?.length > 0) {
@@ -72,6 +94,10 @@ export default function ProductForm({
   return (
     <form onSubmit={saveProduct}>
       <Header />
+      <Toaster 
+      position="top-center"
+      reverseOrder={false}
+      />
       <div className="w-full mt-6 px-12 pb-5">
         <h1 className="text-2xl font-bold mb-5">Become a vendor</h1>
         <label>Full names</label>
@@ -151,6 +177,7 @@ export default function ProductForm({
         <button
           type="submit"
           className="bg-black hover:bg-slate-600 text-white px-4 py-1 rounded-sm border border-gray-200 shadow-sm"
+          onClick={notify}
         >
           Save
         </button>
