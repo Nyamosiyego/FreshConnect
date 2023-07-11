@@ -71,8 +71,10 @@ export default function CartPage() {
   const { cartProducts, addProduct, removeProduct, clearCart } =
     useContext(CartContext);
   const [products, setProducts] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
   const [streetAddress, setStreetAddress] = useState("");
@@ -116,11 +118,30 @@ export default function CartPage() {
       window.location = response.data.url;
     }
   }
+  async function paywithMpesa() {
+    const response = await axios.post("/api/mpesa", {
+      name,
+      email,
+      phone,
+      city,
+      postalCode,
+      streetAddress,
+      country,
+      cartProducts,
+      amount: totalPrice,
+    });
+    if (response.data.url) {
+      window.location = response.data.url;
+    }
+  }
   let total = 0;
   for (const productId of cartProducts) {
     const price = products.find((p) => p._id === productId)?.price || 0;
     total += price;
   }
+  useEffect(() => {
+    setTotalPrice(total);
+  }, [total]);
 
   if (isSuccess) {
     return (
@@ -210,6 +231,13 @@ export default function CartPage() {
                 name="email"
                 onChange={(ev) => setEmail(ev.target.value)}
               />
+              <Input
+                type="text"
+                placeholder="Phone"
+                value={phone}
+                name="phone"
+                onChange={(ev) => setPhone(ev.target.value)}
+              />
               <CityHolder>
                 <Input
                   type="text"
@@ -242,6 +270,9 @@ export default function CartPage() {
               />
               <Button black block onClick={goToPayment}>
                 Continue to payment
+              </Button>
+              <Button block className='bg-green-600 mt-2' onClick={paywithMpesa}>
+                Pay with Mpesa
               </Button>
             </Box>
           )}
