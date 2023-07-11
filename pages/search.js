@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Header from "@/components/Header";
 import Center from "@/components/Center";
 import Input from "@/components/Input";
@@ -33,7 +34,7 @@ export default function SearchPage() {
     } else {
       setProducts([]);
     }
-  }, [phrase]);
+  }, [debouncedSearch, phrase]);
 
   function searchProducts(phrase) {
     axios

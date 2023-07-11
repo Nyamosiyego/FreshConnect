@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import styled from "styled-components";
 import Input from "@/components/Input";
 import WhiteBox from "@/components/WhiteBox";

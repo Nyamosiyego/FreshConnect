@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styled from "styled-components";
 import { ButtonStyle } from "@/components/Button";
 import { primary } from "@/lib/colors";

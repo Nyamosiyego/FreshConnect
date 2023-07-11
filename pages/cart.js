@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Header from "@/components/Header";
 import styled from "styled-components";
 import Center from "@/components/Center";
@@ -123,7 +124,7 @@ export default function CartPage() {
     axios.get("/api/settings?name=shippingFee").then((res) => {
       setShippingFee(res.data.value);
     });
-  }, []);
+  }, [clearCart]);
   useEffect(() => {
     if (!session) {
       return;

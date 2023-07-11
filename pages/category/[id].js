@@ -79,7 +79,7 @@ export default function CategoryPage({
       setProducts(res.data);
       setLoadingProducts(false);
     });
-  }, [filtersValues, sort, filtersChanged]);
+  }, [filtersValues, sort, filtersChanged, category._id, subCategories]);
   return (
     <>
       <Header />
