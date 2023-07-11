@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { CartContextProvider } from "@/components/CartContext";
-import { ChakraProvider } from "@chakra-ui/react";
+import { SessionProvider } from "next-auth/react";
 import "@/styles/globals.css";
 
 const GlobalStyles = createGlobalStyle`
@@ -11,17 +11,25 @@ const GlobalStyles = createGlobalStyle`
     margin:0;
     font-family: 'Poppins', sans-serif;
   }
+  hr{
+    display: block;
+    border:0;
+    border-top:1px solid #ccc;
+  }
 `;
 
-export default function App({ Component, pageProps }) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   return (
     <>
       <GlobalStyles />
-      <CartContextProvider>
-        <ChakraProvider>
+      <SessionProvider session={session}>
+        <CartContextProvider>
           <Component {...pageProps} />
-        </ChakraProvider>
-      </CartContextProvider>
+        </CartContextProvider>
+      </SessionProvider>
     </>
   );
 }

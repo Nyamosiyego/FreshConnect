@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import Spinner from "@/components/spinner";
-import { ReactSortable } from "react-sortablejs";
+// import { ReactSortable } from "react-sortablejs";
 import Header from "@/components/Header";
 
 export default function ProductForm({
@@ -109,11 +109,11 @@ useEffect(() => {
         />
         <label>Photos</label>
         <div className="mb-2 flex flex-wrap gap-1">
-          <ReactSortable
+          {/* <ReactSortable
             list={images}
             className="flex flex-wrap gap-1"
             setList={updateImagesOrder}
-          >
+          > */}
             {!!images?.length &&
               images.map((link) => (
                 <div
@@ -123,7 +123,7 @@ useEffect(() => {
                   <img src={link} alt="" className="rounded-lg" />
                 </div>
               ))}
-          </ReactSortable>
+          {/* </ReactSortable> */}
           {isUploading && (
             <div className="h-24 flex items-center">
               <Spinner />
