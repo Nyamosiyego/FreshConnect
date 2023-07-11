@@ -8,6 +8,7 @@ import { CartContext } from "@/components/CartContext";
 import axios from "axios";
 import Table from "@/components/Table";
 import Input from "@/components/Input";
+import toast, { Toaster } from "react-hot-toast";
 
 const ColumnsWrapper = styled.div`
   display: grid;
@@ -80,6 +81,8 @@ export default function CartPage() {
   const [streetAddress, setStreetAddress] = useState("");
   const [country, setCountry] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
+
+  const notify = () => toast.success("Check your phone.");
   useEffect(() => {
     if (cartProducts.length > 0) {
       axios.post("/api/cart", { ids: cartProducts }).then((response) => {
@@ -133,6 +136,7 @@ export default function CartPage() {
     if (response.data.url) {
       window.location = response.data.url;
     }
+    notify();
   }
   let total = 0;
   for (const productId of cartProducts) {
@@ -164,6 +168,20 @@ export default function CartPage() {
       <Center>
         <ColumnsWrapper>
           <Box>
+            <Toaster
+              position="bottom-center"
+              reverseOrder={false}
+              duration={5000}
+              toastOptions={{
+                // Define default options
+                className: "",
+                duration: 5000,
+                style: {
+                  background: "#363636",
+                  color: "#fff",
+                },
+              }}
+            />
             <h2>Cart</h2>
             {!cartProducts?.length && <div>Your cart is empty</div>}
             {products?.length > 0 && (
@@ -271,7 +289,11 @@ export default function CartPage() {
               <Button black block onClick={goToPayment}>
                 Continue to payment
               </Button>
-              <Button block className='bg-green-600 mt-2' onClick={paywithMpesa}>
+              <Button
+                block
+                className="bg-green-600 mt-2"
+                onClick={paywithMpesa}
+              >
                 Pay with Mpesa
               </Button>
             </Box>
