@@ -241,6 +241,7 @@ export default function CartPage() {
                 value={name}
                 name="name"
                 onChange={(ev) => setName(ev.target.value)}
+                required
               />
               <Input
                 type="text"
@@ -248,13 +249,15 @@ export default function CartPage() {
                 value={email}
                 name="email"
                 onChange={(ev) => setEmail(ev.target.value)}
+                required
               />
               <Input
                 type="text"
-                placeholder="Phone"
+                placeholder="254700000000"
                 value={phone}
                 name="phone"
                 onChange={(ev) => setPhone(ev.target.value)}
+                required
               />
               <CityHolder>
                 <Input
