@@ -120,7 +120,7 @@ export default function AccountPage() {
                         {session && <p>Your have made no orders</p>}
                         {orders.length === 0 && !session && <p>Login to see your orders</p>}
                         {orders.length > 0 &&
-                          orders.map((o) => <SingleOrder {...o} />)}
+                          orders.map((o) => <SingleOrder {...o} key={o}/>)}
                       </div>
                     )}
                   </>
