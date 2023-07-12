@@ -262,7 +262,7 @@ export default function CartPage() {
                           </Button>
                         </td>
                         <td>
-                          $
+                          Ksh.
                           {cartProducts.filter((id) => id === product._id)
                             .length * product.price}
                         </td>
