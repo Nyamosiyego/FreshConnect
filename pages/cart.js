@@ -270,15 +270,15 @@ export default function CartPage() {
                     ))}
                     <tr className="subtotal">
                       <td colSpan={2}>Products</td>
-                      <td>${productsTotal}</td>
+                      <td>Ksh.{productsTotal}</td>
                     </tr>
                     <tr className="subtotal">
                       <td colSpan={2}>Shipping</td>
-                      <td>${shippingFee}</td>
+                      <td>Ksh.{shippingFee}</td>
                     </tr>
                     <tr className="subtotal total">
                       <td colSpan={2}>Total</td>
-                      <td>${productsTotal + parseInt(shippingFee || 0)}</td>
+                      <td>Ksh.{productsTotal + parseInt(shippingFee || 0)}</td>
                     </tr>
                   </tbody>
                 </Table>
@@ -304,7 +304,7 @@ export default function CartPage() {
                   onChange={(ev) => setEmail(ev.target.value)}
                 />
                 <Input
-                  type="text"
+                  type="number"
                   placeholder="254700000000"
                   value={phone}
                   name="phone"

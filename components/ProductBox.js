@@ -130,7 +130,7 @@ export default function ProductBox({
       <ProductInfoBox>
         <Title href={url}>{title}</Title>
         <PriceRow>
-          <Price>${price}</Price>
+          <Price>{price}</Price>
           <FlyingButton _id={_id} src={images?.[0]}>
             Add to cart
           </FlyingButton>

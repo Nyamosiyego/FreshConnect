@@ -42,7 +42,7 @@ export default function ProductPage({ product }) {
             <p>{product.description}</p>
             <PriceRow>
               <div>
-                <Price>${product.price}</Price>
+                <Price>Ksh.{product.price}</Price>
               </div>
               <div>
                 <FlyingButton main _id={product._id} src={product.images?.[0]}>
