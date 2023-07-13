@@ -45,7 +45,7 @@ To get started with FreshConnect, follow these steps:
 2. Navigate to the project directory and run `npm install` to install all dependencies.
 3. Create a `.env` file in the root of the project directory and add the following environment variables:
 
-
+```
     GOOGLE_ID=<br>
     GOOGLE_SECRET=<br>
     GITHUB_ID=<br>
@@ -57,18 +57,19 @@ To get started with FreshConnect, follow these steps:
     S3_ACCESS_KEY=<br>
     S3_SECRET_ACCESS_KEY=<br>
     S3_BUCKET=<br>
-    NEXTAUTH_URL="http://localhost:3000/"
-    STRIPE_SK=
-    STRIPE_PK= 
-    PUBLIC_URL="http://localhost:3000/"
-    MPESA_CONSUMER_KEY=
-    MPESA_CONSUMER_SECRET=
-    MPESA_PASS_KEY=
-    MPESA_B2C_SECURITY_CREDENTIAL=
-    MPESA_BUSINESS_SHORT_CODE=174379
-    MPESA_PARTYA=
-    MPESA_PARTYB=
-    MPESA_INITIATOR_NAME=testapi
-    MPESA_ENVIRONMENT="sandbox | live"
+    NEXTAUTH_URL="http://localhost:3000/"<br>
+    STRIPE_SK=<br>
+    STRIPE_PK= <br>
+    PUBLIC_URL="http://localhost:3000/"<br>
+    MPESA_CONSUMER_KEY=<br>
+    MPESA_CONSUMER_SECRET=<br>
+    MPESA_PASS_KEY=<br>
+    MPESA_B2C_SECURITY_CREDENTIAL=<br>
+    MPESA_BUSINESS_SHORT_CODE=174379<br>
+    MPESA_PARTYA=<br>
+    MPESA_PARTYB=<br>
+    MPESA_INITIATOR_NAME=testapi<br>
+    MPESA_ENVIRONMENT="sandbox | live"<br>
+```
 
 5. Run the project using the command npm run dev then head to [http://localhost:3000](http://localhost:3000).
