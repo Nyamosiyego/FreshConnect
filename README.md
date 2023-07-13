@@ -7,23 +7,23 @@ FreshConnect is a platform where farmers can register as vendors and post their 
 
 In the products page all the users can access all the products in the ecommerce FreshConnect page
 
-![Screenshot of FreshConnect Product page](https://res.cloudinary.com/dwh98o938/image/upload/v1689261771/Screenshot_2023-07-13_181132_juda9o.png)
+![Screenshot of FreshConnect Product page](https://res.cloudinary.com/dwh98o938/image/upload/v1689264877/Screenshot_2023-07-13_191233_nwqemg.png)
 
 Here users can choose products based on their categories and filter by properties
 
-![Screenshot of FreshConnect Categories page](https://res.cloudinary.com/dwh98o938/image/upload/v1689261772/Screenshot_2023-07-13_181207_fd4jtc.png)
+![Screenshot of FreshConnect Categories page](https://res.cloudinary.com/dwh98o938/image/upload/v1689264878/Screenshot_2023-07-13_191324_redflf.png)
 
 In the accounts page a user can sign in with google to create account with us. Here you can also access your orders and wishlist.
 
-![Screenshot of FreshConnect Account page](https://res.cloudinary.com/dwh98o938/image/upload/v1689261750/Screenshot_2023-07-13_181247_ystt5w.png)
+![Screenshot of FreshConnect Account page](https://res.cloudinary.com/dwh98o938/image/upload/v1689265123/Screenshot_2023-07-13_191735_ilbjhr.png)
 
 The picture below you can see the log in with google consent page and sign-in options
 
-![Screenshot of FreshConnect orders page](https://res.cloudinary.com/dwh98o938/image/upload/v1689261751/Screenshot_2023-07-13_181745_eomkdu.png)
+![Screenshot of FreshConnect orders page](https://res.cloudinary.com/dwh98o938/image/upload/v1689265123/Screenshot_2023-07-13_191756_jxzj1n.png)
 
 Here you could see the accounts page with the orders and wishlist and also customer information
 
-![Screenshot of FreshConnect Account page](https://res.cloudinary.com/dwh98o938/image/upload/v1689261750/Screenshot_2023-07-13_181247_ystt5w.png)
+![Screenshot of FreshConnect Account page](https://res.cloudinary.com/dwh98o938/image/upload/v1689265134/Screenshot_2023-07-13_191820_sqflji.png)
 
 After buying everything that you need the user can navigate to the cart page where they can see the total amount and checkout with stripe and mpesa
 
