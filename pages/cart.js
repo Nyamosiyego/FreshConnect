@@ -106,10 +106,11 @@ export default function CartPage() {
   const notify = () => toast.success("Check your phone.");
   const removeFirstDigitAndAppend = () => {
     let updatedPhone = phone;
-    if (phone.startsWith(0)) {
+    if (phone.startsWith('0')) {
       updatedPhone = `254${phone.slice(1)}`;
     }
     setPhone(updatedPhone);
+    console.log(updatedPhone);
   };
 
 
