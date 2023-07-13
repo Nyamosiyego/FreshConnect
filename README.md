@@ -58,8 +58,8 @@ To get started with FreshConnect, follow these steps:
     S3_SECRET_ACCESS_KEY=
     S3_BUCKET=
     NEXTAUTH_URL="http://localhost:3000/"
-    STRIPE_SK=<br>
-    STRIPE_PK= <br>
+    STRIPE_SK=
+    STRIPE_PK= 
     PUBLIC_URL="http://localhost:3000/"
     MPESA_CONSUMER_KEY=
     MPESA_CONSUMER_SECRET=
