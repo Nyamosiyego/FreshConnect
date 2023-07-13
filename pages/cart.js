@@ -104,6 +104,15 @@ export default function CartPage() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [shippingFee, setShippingFee] = useState(null);
   const notify = () => toast.success("Check your phone.");
+  const removeFirstDigitAndAppend = () => {
+    let updatedPhone = phone;
+    if (phone.startsWith(0)) {
+      updatedPhone = `254${phone.slice(1)}`;
+    }
+    setPhone(updatedPhone);
+  };
+
+
   useEffect(() => {
     if (cartProducts.length > 0) {
       axios.post("/api/cart", { ids: cartProducts }).then((response) => {
@@ -159,6 +168,7 @@ export default function CartPage() {
     }
   }
   async function paywithMpesa() {
+    removeFirstDigitAndAppend();
     const response = await axios.post("/api/mpesa", {
       name,
       email,
@@ -173,8 +183,7 @@ export default function CartPage() {
     if (response.data.url) {
       window.location = response.data.url;
     }
-    console.log(totalPrice);
-    console.log(total);
+    console.log(phone);
     notify();
   }
   let productsTotal = 0;
