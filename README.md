@@ -46,30 +46,30 @@ To get started with FreshConnect, follow these steps:
 3. Create a `.env` file in the root of the project directory and add the following environment variables:
 
 ```
-    GOOGLE_ID=<br>
-    GOOGLE_SECRET=<br>
-    GITHUB_ID=<br>
-    GITHUB_SECRET=<br>
-    MONGODB_URI=<br>
-    EMAIL_SERVER=<br>
-    EMAIL_FROM=user@gmail.com<br>
-    SECRET=<br>
-    S3_ACCESS_KEY=<br>
-    S3_SECRET_ACCESS_KEY=<br>
-    S3_BUCKET=<br>
-    NEXTAUTH_URL="http://localhost:3000/"<br>
+    GOOGLE_ID=
+    GOOGLE_SECRET=
+    GITHUB_ID=
+    GITHUB_SECRET=
+    MONGODB_URI=
+    EMAIL_SERVER=
+    EMAIL_FROM=user@gmail.com
+    SECRET=
+    S3_ACCESS_KEY=
+    S3_SECRET_ACCESS_KEY=
+    S3_BUCKET=
+    NEXTAUTH_URL="http://localhost:3000/"
     STRIPE_SK=<br>
     STRIPE_PK= <br>
-    PUBLIC_URL="http://localhost:3000/"<br>
-    MPESA_CONSUMER_KEY=<br>
-    MPESA_CONSUMER_SECRET=<br>
-    MPESA_PASS_KEY=<br>
-    MPESA_B2C_SECURITY_CREDENTIAL=<br>
-    MPESA_BUSINESS_SHORT_CODE=174379<br>
-    MPESA_PARTYA=<br>
-    MPESA_PARTYB=<br>
-    MPESA_INITIATOR_NAME=testapi<br>
-    MPESA_ENVIRONMENT="sandbox | live"<br>
+    PUBLIC_URL="http://localhost:3000/"
+    MPESA_CONSUMER_KEY=
+    MPESA_CONSUMER_SECRET=
+    MPESA_PASS_KEY=
+    MPESA_B2C_SECURITY_CREDENTIAL=
+    MPESA_BUSINESS_SHORT_CODE=174379
+    MPESA_PARTYA=
+    MPESA_PARTYB=
+    MPESA_INITIATOR_NAME=testapi
+    MPESA_ENVIRONMENT="sandbox | live"
 ```
 
 5. Run the project using the command npm run dev then head to [http://localhost:3000](http://localhost:3000).
