@@ -25,17 +25,17 @@ Here you could see the accounts page with the orders and wishlist and also custo
 
 ![Screenshot of FreshConnect Account page](https://res.cloudinary.com/dwh98o938/image/upload/v1689265134/Screenshot_2023-07-13_191820_sqflji.png)
 
-After buying everything that you need the user can navigate to the cart page where they can see the total amount and checkout with stripe and mpesa
+After buying everything that you need the user can navigate to the cart page where they can see the total amount and checkout with stripe and mpesa stk-push
 
-![Screenshot of FreshConnect admins page](https://res.cloudinary.com/dwh98o938/image/upload/v1689261625/Screenshot_2023-07-13_181808_kr3wpg.png)
+![Screenshot of FreshConnect admins page](https://res.cloudinary.com/dwh98o938/image/upload/v1689265709/Screenshot_2023-07-13_192101_z5vooa.png)
 
 Stripe Checkout-page
 
-![Screenshot of FreshConnect admins page](https://res.cloudinary.com/dwh98o938/image/upload/v1689261625/Screenshot_2023-07-13_181808_kr3wpg.png)
+![Screenshot of FreshConnect admins page](https://res.cloudinary.com/dwh98o938/image/upload/v1689265709/Screenshot_2023-07-13_192140_byhrps.png)
 
 In the apply vendor page one could apply to be able to sell in our website. After applying we'll vet you then get back to you
 
-![Screenshot of FreshConnect settings page](https://res.cloudinary.com/dwh98o938/image/upload/v1689261728/Screenshot_2023-07-13_182113_n5ir7x.png)
+![Screenshot of FreshConnect settings page](https://res.cloudinary.com/dwh98o938/image/upload/v1689265709/Screenshot_2023-07-13_192206_qougya.png)
 
 ## Getting Started
 
