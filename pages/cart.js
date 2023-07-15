@@ -109,9 +109,8 @@ export default function CartPage() {
     if (phone.startsWith('0')) {
       updatedPhone = `254${phone.slice(1)}`;
     }
-    setPhone(updatedPhone);
-    console.log(updatedPhone);
   };
+
 
 
   useEffect(() => {
