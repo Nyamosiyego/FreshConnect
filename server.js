@@ -10,7 +10,12 @@ app.prepare().then(() => {
   const server = express();
 
   // CORS configuration
-  server.use(cors());
+ server.use(
+   cors({
+     origin: "https://fresh-connect.vercel.app",
+   })
+ );
+
 
   // Next.js request handling
   server.all("*", (req, res) => {
