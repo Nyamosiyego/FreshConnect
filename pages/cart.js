@@ -11,6 +11,7 @@ import Input from "@/components/Input";
 import { RevealWrapper } from "next-reveal";
 import { useSession } from "next-auth/react";
 import toast, { Toaster } from "react-hot-toast";
+import { set } from "lodash";
 
 const ColumnsWrapper = styled.div`
   display: grid;
@@ -97,6 +98,7 @@ export default function CartPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [newPhone, setNewPhone] = useState("");
   const [city, setCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
   const [streetAddress, setStreetAddress] = useState("");
@@ -106,12 +108,11 @@ export default function CartPage() {
   const notify = () => toast.success("Check your phone.");
   const removeFirstDigitAndAppend = () => {
     let updatedPhone = phone;
-    if (phone.startsWith('0')) {
+    if (phone.startsWith("0")) {
       updatedPhone = `254${phone.slice(1)}`;
     }
+    {updatedPhone ? setNewPhone(updatedPhone) : setNewPhone(phone)}
   };
-
-
 
   useEffect(() => {
     if (cartProducts.length > 0) {
@@ -172,7 +173,7 @@ export default function CartPage() {
     const response = await axios.post("/api/mpesa", {
       name,
       email,
-      phone,
+      phone: newPhone,
       city,
       postalCode,
       streetAddress,
@@ -314,7 +315,7 @@ export default function CartPage() {
                 />
                 <Input
                   type="number"
-                  placeholder="254700000000"
+                  placeholder="Phone Number"
                   value={phone}
                   name="phone"
                   onChange={(ev) => setPhone(ev.target.value)}
