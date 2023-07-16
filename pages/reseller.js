@@ -6,15 +6,18 @@ import toast, { Toaster } from "react-hot-toast";
 import Spinner from "@/components/spinner";
 // import { ReactSortable } from "react-sortablejs";
 import Header from "@/components/Header";
+import  { useSession } from "next-auth/react";
 
 export default function ProductForm({
   _id,
   title: existingTitle,
+  email: existingEmail,
   description: existingDescription,
   number: existingNumber,
   images: existingImages,
 }) {
   const [title, setTitle] = useState(existingTitle || "");
+  const [email, setEmail] = useState(existingEmail || "");
   const [description, setDescription] = useState(existingDescription || "");
   const [number, setNumber] = useState(existingNumber || "");
   const [images, setImages] = useState(existingImages || []);
@@ -24,6 +27,8 @@ export default function ProductForm({
   const [kra, setKra] = useState("");
 
   const router = useRouter();
+
+  const { data: session } = useSession();
   const notify = () =>
     toast("We'll get in touch.", {
       icon: "👏",
@@ -37,7 +42,8 @@ export default function ProductForm({
   async function saveProduct(ev) {
     ev.preventDefault();
     const data = {
-      title,
+      title: title || session.user.name,
+      email: email || session.user.email,
       description,
       number,
       images,
@@ -104,8 +110,15 @@ useEffect(() => {
         <input
           type="text"
           placeholder="Full names"
-          value={title}
+          value={title || session?.user?.name}
           onChange={(ev) => setTitle(ev.target.value)}
+        />
+        <label>Email</label>
+        <input
+          type="text"
+          placeholder="Email"
+          value={email || session?.user?.email}
+          onChange={(ev) => setEmail(ev.target.value)}
         />
         <label>Photos</label>
         <div className="mb-2 flex flex-wrap gap-1">

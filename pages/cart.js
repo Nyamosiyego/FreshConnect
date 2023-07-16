@@ -106,14 +106,6 @@ export default function CartPage() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [shippingFee, setShippingFee] = useState(null);
   const notify = () => toast.success("Check your phone.");
-  const removeFirstDigitAndAppend = () => {
-    let updatedPhone = phone;
-    if (phone.startsWith("0")) {
-      updatedPhone = `254${phone.slice(1)}`;
-    }
-    {updatedPhone ? setNewPhone(updatedPhone) : setNewPhone(phone)}
-  };
-
   useEffect(() => {
     if (cartProducts.length > 0) {
       axios.post("/api/cart", { ids: cartProducts }).then((response) => {
@@ -141,7 +133,7 @@ export default function CartPage() {
     }
     axios.get("/api/address").then((response) => {
       setName(response.data.name);
-      setEmail(response.data.email);
+      setEmail(response.data.userEmail);
       setCity(response.data.city);
       setPostalCode(response.data.postalCode);
       setStreetAddress(response.data.streetAddress);
@@ -196,6 +188,23 @@ export default function CartPage() {
   useEffect(() => {
     setTotalPrice(total);
   }, [productsTotal, shippingFee, total]);
+
+  const removeFirstDigitAndAppend = () => {
+    let updatedPhone = phone;
+    if (phone.startsWith("0")) {
+      updatedPhone = `254${phone.slice(1)}`;
+    }
+    {
+      updatedPhone ? setNewPhone(updatedPhone) : setNewPhone(phone);
+    }
+    
+  };
+
+  useEffect(() => {
+    removeFirstDigitAndAppend();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phone]);
+
 
   if (isSuccess) {
     return (

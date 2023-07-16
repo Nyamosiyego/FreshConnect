@@ -4,19 +4,23 @@ export default async function handle(req, res) {
   const { method } = req;
   await mongooseConnect();
 
-
   if (method === "POST") {
-    const { title, description, number, images, idnum, kra } = req.body;
+    const { title, email, description, number, images, idnum, kra } = req.body;
     const vendor = new Vendor({
-        title,
-        description,
-        number,
-        images,
-        idnum,
-        kra,
+      title,
+      email,
+      description,
+      number,
+      images,
+      idnum,
+      kra,
     });
-    await vendor.save();
-    res.json(vendor);
+    try {
+      await vendor.save();
+      res.json(vendor);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
   }
 
   if (method === "PUT") {
