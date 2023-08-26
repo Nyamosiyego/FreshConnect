@@ -18,8 +18,10 @@ const ColsWrapper = styled.div`
   display: grid;
   grid-template-columns:  0.8fr;
   gap: 40px;
-  padding-left: 100px;
-  margin: 40px 10px;
+  @media screen and (min-width: 768px) {
+    grid-template-columns:  1.2fr 0.8fr;
+  }
+  margin: 40px 0px;
   p {
     margin: 5px;
   }
