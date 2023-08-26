@@ -132,7 +132,7 @@ export default function AccountPage() {
                     {wishlistLoaded && (
                       <>
                         <WishedProductsGrid>
-                          {wishedProducts.length > 0 &&
+                          {wishedProducts.product > 0 &&
                             wishedProducts.map((wp) => (
                               <ProductBox
                                 key={wp?._id}
