@@ -16,9 +16,10 @@ import SingleOrder from "@/components/SingleOrder";
 
 const ColsWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns:  0.8fr;
   gap: 40px;
-  margin: 40px 0;
+  padding-left: 100px;
+  margin: 40px 10px;
   p {
     margin: 5px;
   }
@@ -96,7 +97,7 @@ export default function AccountPage() {
   }, [session]);
   function productRemovedFromWishlist(idToRemove) {
     setWishedProducts((products) => {
-      return [...products.filter((p) => p._id.toString() !== idToRemove)];
+      return [...products.filter((p) => p?._id.toString() !== idToRemove)];
     });
   }
   return (
@@ -134,7 +135,7 @@ export default function AccountPage() {
                           {wishedProducts.length > 0 &&
                             wishedProducts.map((wp) => (
                               <ProductBox
-                                key={wp._id}
+                                key={wp?._id}
                                 {...wp}
                                 wished={true}
                                 onRemoveFromWishlist={
