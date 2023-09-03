@@ -53,7 +53,7 @@ export default function ProductPage({ product, user }) {
                 </FlyingButton>
               </div>
             </PriceRow>
-            <p className="mt-3">Sold by: {user?.name}</p>
+            <p className="mt-3 underline">Sold by: {user?.name}</p>
           </div>
         </ColWrapper>
         <ProductReviews product={product} />
@@ -67,10 +67,6 @@ export async function getServerSideProps(context) {
   const { id } = context.query;
   const product = await Product.findById(id)
   const user = await Users?.findById("64b3fee80f660e9bdf9bdf7b");
-  console.log(user)
-  console.log(user?._id);
-  console.log(user.email);
-  console.log(product);
   return {
     props: {
       product: JSON.parse(JSON.stringify(product)),
