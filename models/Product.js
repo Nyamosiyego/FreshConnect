@@ -20,7 +20,7 @@ const ProductSchema = new Schema(
     properties: { type: Object },
     user: {
       type: Schema.Types.ObjectId,
-      ref: "user",
+      ref: "Schema",
     },
   },
   { timestamps: true }

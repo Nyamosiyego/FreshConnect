@@ -1,5 +1,4 @@
 import { Schema, model, models } from "mongoose";
-import Product from "./Product";
 
 const userSchema = new Schema({
   username: String,
@@ -16,19 +15,8 @@ const userSchema = new Schema({
   ],
 });
 
-userSchema.pre("remove", async function (next) {
-  try {
-    const userId = this._id;
 
-    // Delete all products associated with the user
-    await Product.deleteMany({ user: userId });
 
-    next();
-  } catch (error) {
-    next(error);
-  }
-});
+export const Users = models?.user || model("user", userSchema);
 
-const Users = models.user || model("user", userSchema);
 
-export default Users;
